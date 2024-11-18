@@ -19,10 +19,16 @@ const allowedChampions = [
 
 // Cargar la lista de campeones desde la API
 async function loadChampions() {
-    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/${parche}/data/${languageEs}/champion.json`);
-    const data = await response.json();
-    championsList = Object.values(data.data);
-    console.log("Campeones cargados:", championsList);
+    try {
+        const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/${parche}/data/${languageEs}/champion.json`);
+        if (!response.ok) throw new Error(`Error en la API: ${response.status}`);
+        const data = await response.json();
+        championsList = Object.values(data.data);
+        console.log("Campeones cargados:", championsList);
+    } catch (error) {
+        console.error("No se pudo cargar la lista de campeones:", error);
+        alert("Error al cargar los campeones. Revisa la consola para más detalles.");
+    }
 }
 
 // Seleccionar un campeón aleatorio de la lista permitida
