@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Campeón de LoL</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Adivina el Campeón de LoL</h1>
+
+    <!-- Botón para Seleccionar un Campeón Aleatorio -->
+    <div id="champion-select">
+        <button id="random-champion">Campeón Aleatorio</button>
+    </div>
+
+    <!-- Imagen del campeón -->
+    <div id="champion-image-container">
+        <img id="champion-image" src='' display: none; >
+    </div>
+
+    <!-- Adivinar el nombre del campeón -->
+    <div id="guess-name">
+        <h4>Adivina el nombre del campeón</h4>
+        <p>
+            <label for="guess-champion-name">Nombre: </label>
+            <input type="text" id="guess-champion-name" />
+            <button id="check-name">Comprobar Nombre</button>
+        </p>
+        <div id="name-result"></div>
+    </div>
+
+    <!-- Adivinar el título del campeón -->
+    <div id="guess-title">
+        <h4>Adivina el título del campeón</h4>
+        <p>
+            <label for="guess-champion-title">Título: </label>
+            <input type="text" id="guess-champion-title" />
+            <button id="check-title">Comprobar Título</button>
+        </p>
+        <div id="title-result"></div>
+    </div>
+
+    <!-- Adivinar las estadísticas base -->
+    <div id="guess-base-stats">
+        <div id="base-stats-result"></div>
+        <h4>Adivina las estadísticas base</h4>
+        <p>
+            <label for="guess-hp">Vida: </label>
+            <input type="number" id="guess-hp" />
+            <button id="check-hp">Comprobar Vida</button>
+        </p>
+        <p>
+            <label for="guess-hpperlevel">Vida por nivel: </label>
+            <input type="number" id="guess-hpperlevel" />
+            <button id="check-hpperlevel">Comprobar Vida por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-mp">Mana: </label>
+            <input type="number" id="guess-mp" />
+            <button id="check-mp">Comprobar Mana</button>
+        </p>
+        <p>
+            <label for="guess-mpperlevel">Mana por nivel: </label>
+            <input type="number" id="guess-mpperlevel" />
+            <button id="check-mpperlevel">Comprobar Mana por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-armor">Armadura: </label>
+            <input type="number" id="guess-armor" />
+            <button id="check-armor">Comprobar Armadura</button>
+        </p>
+        <p>
+            <label for="guess-armorperlevel">Armadura por nivel: </label>
+            <input type="number" id="guess-armorperlevel" />
+            <button id="check-armorperlevel">Comprobar Armadura por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-spellblock">Bloqueo de hechizos: </label>
+            <input type="number" id="guess-spellblock" />
+            <button id="check-spellblock">Comprobar Bloqueo</button>
+        </p>
+        <p>
+            <label for="guess-spellblockperlevel">Bloqueo de hechizos por nivel: </label>
+            <input type="number" id="guess-spellblockperlevel" />
+            <button id="check-spellblockperlevel">Comprobar Bloqueo por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-attackdamage">Daño de ataque: </label>
+            <input type="number" id="guess-attackdamage" />
+            <button id="check-attackdamage">Comprobar Daño de Ataque</button>
+        </p>
+        <p>
+            <label for="guess-attackdamageperlevel">Daño de ataque por nivel: </label>
+            <input type="number" id="guess-attackdamageperlevel" />
+            <button id="check-attackdamageperlevel">Comprobar Daño por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-attackspeed">Velocidad de ataque: </label>
+            <input type="number" id="guess-attackspeed" />
+            <button id="check-attackspeed">Comprobar Velocidad de Ataque</button>
+        </p>
+        <p>
+            <label for="guess-attackspeedperlevel">Velocidad de ataque por nivel: </label>
+            <input type="number" id="guess-attackspeedperlevel" />
+            <button id="check-attackspeedperlevel">Comprobar Velocidad por Nivel</button>
+        </p>
+        <p>
+            <label for="guess-movespeed">Velocidad de movimiento: </label>
+            <input type="number" id="guess-movespeed" />
+            <button id="check-movespeed">Comprobar Velocidad</button>
+        </p>
+        
+        
+        <p>
+            <label for="guess-attackrange">Rango de ataque: </label>
+            <input type="number" id="guess-attackrange" />
+            <button id="check-attackrange">Comprobar Rango</button>
+        </p>
+        <p>
+            <label for="guess-hpregen">Regeneración de vida: </label>
+            <input type="number" id="guess-hpregen" />
+            <button id="check-hpregen">Comprobar Regeneración de Vida</button>
+        </p>
+        <p>
+            <label for="guess-mpregen">Regeneración de mana: </label>
+            <input type="number" id="guess-mpregen" />
+            <button id="check-mpregen">Comprobar Regeneración de Mana</button>
+        </p>
+        <p>
+            <label for="guess-crit">Probabilidad de crítico: </label>
+            <input type="number" id="guess-crit" />
+            <button id="check-crit">Comprobar Probabilidad de Crítico</button>
+        </p>
+        
+        
+        
+    </div>
+
+    <!-- Adivinar las estadísticas de escalado -->
+    <div id="guess-scaling-stats">
+        <h4>Adivina las estadísticas de escalado</h4>
+        
+        
+        
+        
+        
+        
+        <div id="scaling-stats-result"></div>
+    </div>
+
+    <script src="/scrypt.js"></script>
+</body>
+</html>
